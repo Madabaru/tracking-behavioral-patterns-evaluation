@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
 
-DATASET = "mobility" # browsing
+DATASET = "mobility"  # browsing
 FILE_IN = f"{DATASET}_evaluation.csv"
 
 df = pd.read_csv("data/" + FILE_IN, delimiter=",")
-subset_df = df[97:121] # -2, -1 # CHANGE HERE
+subset_df = df[97:121]  # -2, -1 # CHANGE HERE
 sample_size = subset_df["client_sample_size"].values[0]
 
 for index, row in subset_df.iterrows():
@@ -31,13 +31,12 @@ for index, row in subset_df.iterrows():
 
     output_str = ""
     output_str = output_str + row["strategy"] + "&"
-    output_str = output_str + row["scope"] + "&"   
+    output_str = output_str + row["scope"] + "&"
     output_str = output_str + row["scoring_matrix"] + "&"
 
     output_str = output_str + top_1 + " $\pm$ " + top_1_error + " & "
     output_str = output_str + top_10 + " $\pm$ " + top_10_error + " & "
-    output_str = output_str + top_10_percent + " $\pm$ " + top_10_percent_error + " \\\\"
+    output_str = output_str + top_10_percent + \
+        " $\pm$ " + top_10_percent_error + " \\\\"
     print(output_str)
     print("\hline")
-
-

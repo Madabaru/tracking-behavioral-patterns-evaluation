@@ -5,7 +5,7 @@ import pandas as pd
 
 BAR_WIDTH = 0.2
 
-DATASET = "browsing" 
+DATASET = "browsing"
 FILE_IN = f"{DATASET}_evaluation.csv"
 
 APPROACH = "Sequence alignment-based Approach"
@@ -13,12 +13,12 @@ TITLE = f"{APPROACH}: Dependency of Linkage Attacks"
 
 plt.style.use('ggplot')
 df = pd.read_csv("data/" + FILE_IN, delimiter=",")
-fig = plt.figure(figsize=(8,4))
+fig = plt.figure(figsize=(8, 4))
 ax = fig.add_subplot(111)
 ax.patch.set_facecolor('#e0e0e0')
 
-subset_df = df[180:182] # -2, -1 # CHANGE HERE
-x = ["Independent", "Dependent"] # CHANGE HERE
+subset_df = df[180:182]  # -2, -1 # CHANGE HERE
+x = ["Independent", "Dependent"]  # CHANGE HERE
 
 sample_size = subset_df["client_sample_size"].values[0]
 
@@ -33,17 +33,20 @@ top_10_percent_std = subset_df["top_10_percent_std"].values
 ci_top_1 = 1.96 * (top_1_std / np.sqrt(sample_size))
 ci_top_10 = 1.96 * (top_10_std / np.sqrt(sample_size))
 ci_top_10_percent = 1.96 * (top_10_percent_std / np.sqrt(sample_size))
-  
+
 # The x position of bars
 top_1_bar = np.arange(len(x))
 top_10_bar = [i + BAR_WIDTH for i in top_1_bar]
 top_10_percent_bar = [i + 2 * BAR_WIDTH for i in top_1_bar]
- 
-plt.bar(top_1_bar, top_1, width=BAR_WIDTH, color="#3f51b5", yerr=ci_top_1, capsize=3, label="Top 1")
-plt.bar(top_10_bar, top_10, width=BAR_WIDTH, color="#f44336", yerr=ci_top_10, capsize=3, label="Top 10")
-plt.bar(top_10_percent_bar, top_10_percent, width=BAR_WIDTH, color="#9e9e9e", yerr=ci_top_10_percent, capsize=3, label="Top 10%")
- 
-plt.xticks([r + BAR_WIDTH for r in range(len(top_1_bar))], x) # rotation=90)
+
+plt.bar(top_1_bar, top_1, width=BAR_WIDTH, color="#3f51b5",
+        yerr=ci_top_1, capsize=3, label="Top 1")
+plt.bar(top_10_bar, top_10, width=BAR_WIDTH, color="#f44336",
+        yerr=ci_top_10, capsize=3, label="Top 10")
+plt.bar(top_10_percent_bar, top_10_percent, width=BAR_WIDTH,
+        color="#9e9e9e", yerr=ci_top_10_percent, capsize=3, label="Top 10%")
+
+plt.xticks([r + BAR_WIDTH for r in range(len(top_1_bar))], x)  # rotation=90)
 plt.legend(loc='lower right')
 plt.title(TITLE)
 plt.ylabel('Probability')
