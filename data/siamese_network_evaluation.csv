@@ -1,0 +1,30 @@
+dataset,client_sample_size,trace_sample_size,approach,fields,top_1,top_1_std,top_10,top_10_std,top_10_percent,top_10_percent_std
+browsing,400,500,Triplet Loss - Random,,0.61,0.4877,0.9150,0.2789,0.9925,0.0863
+browsing,400,500,Triplet Loss - Semi-Hard,,0.7050,0.4560,0.9525,0.2127,0.9925,0.0863
+browsing,400,500,Triplet Loss - Hard,,0.7925,0.4055,0.9575,0.2017,0.9875,0.1111
+browsing,400,500,Contrastive Loss - Random,,0.2775,0.4478,0.9250,0.2634,0.9975,0.0499
+browsing,400,500,Contrastive Loss - Semi-Hard,,0.2325,0.4019,0.8350,0.3712,0.9975,0.0499
+browsing,400,500,Contrastive Loss - Hard,,0.6950,0.4604,0.9350,0.2465,0.9850,0.1216
+browsing,400,500,Histogram-based,,0.4075,0.4913,0.5875,0.4922,0.875,0.33071
+browsing,400,500,Sequence alignment-based,,0.15,0.3570,0.4675,0.4989,0.9425,0.232
+browsing,400,500,Siamese network-based,,0.7925,0.4055,0.9575,0.2017,0.9875,0.1111
+browsing,400,2,Siamese network-based,,0.3650,0.4814,0.7625,0.4256,0.9825,0.1311 
+browsing,400,5,Siamese network-based,,0.5300,0.4991,0.8725,0.3335,0.9850,0.1216
+browsing,400,10,Siamese network-based,,0.6250,0.4841,0.9150,0.2789,0.9925,0.0863
+browsing,400,15,Siamese network-based,,0.6950,0.4604,0.9325,0.2509,0.9900,0.0995
+browsing,400,20,Siamese network-based,,0.6975,0.4593,0.9325,0.2509,0.9925,0.0863
+browsing,400,25,Siamese network-based,,0.6950,0.4604,0.9375,0.2421,0.9925,0.0863
+browsing,400,50,Siamese network-based,,0.7000,0.4583,0.9275,0.2593,0.9900,0.0995
+mobility,400,500,Histogram-based,,0.075,0.2639,0.165,0.3712,0.455,0.4979
+mobility,400,500,Sequence alignment-based,,0.045,0.2073,0.1,0.3,0.275,0.4465
+mobility,400,500,Siamese network-based,,0.075,0.2634,0.1525,0.3595,0.5050,0.5000
+browsing,400,500,Siamese network-based - W/O Day/Hour,,0.7525,0.4316,0.9625,0.1900,0.9875,0.1111
+browsing,400,500,Siamese network-based - W Day/Hour,,0.7075,0.4549,0.9600,0.4549,0.9875,0.1111
+mobility,400,500,Siamese network-based - W/O Day/Hour,,0.0700,0.2551,0.1325,0.3390,0.5325,0.4989
+mobility,400,500,Siamese network-based - W Day/Hour,,0.0450,0.2073,0.1000,0.3000,0.4925,0.4999
+
+
+
+
+
+
